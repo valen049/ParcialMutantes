@@ -11,44 +11,17 @@ El umbral se refiere a la cantidad mínima de secuencias mutantes necesarias par
 
 ### 🧬 2. API REST
 La API REST proporciona el endpoint /mutant que verifica si una secuencia de ADN es mutante.
-
-Solicitud:
-Método: POST
-Endpoint: /mutant
-las respuestas que podemos obtener son :200 OK si es mutante y 403 Forbidden si no es mutante.
+SE utiliza el metodo Post y las respuestas que podemos obtener son :200 OK si es mutante y 403 Forbidden si no es mutante.
 
 
 ### 🧬 3. Persistencia de Datos y Estadísticas
 Mediante el uso de la base de datos H2, se almacenan las secuencias de ADN (evitando duplicados) y se implementa el endpoint /stats para consultar estadísticas en formato JSON:
 
 {
-  "count_mutant_dna": 35,
-  "count_human_dna": 100,
-  "ratio": 0.35
+  "count_mutant_dna": 5,
+  "count_human_dna": 10,
+  "ratio": 0.5
 }
-
-
-🧪 Pruebas de Carga y de Integración
-Se realizaron pruebas de carga con JMeter y tests automáticos en JUnit para asegurar la robustez del sistema.
-
-### 💻 PROBANDO LOS ENDPOINTS
-Desde Postman:
-
-Endpoint /stats
-
-Método: GET
-URL:
-Externo (Render): https://desarrollo-de-software-parcial-mutantes.onrender.com/mutantapi/api/v1/stats
-Local: http://localhost:8080/mutantapi/api/v1/stats
-Ejecución: Haz clic en SEND.
-Endpoint /mutant
-
-Método: POST
-URL:
-Externo (Render): https://desarrollo-de-software-parcial-mutantes.onrender.com/mutantapi/api/v1/mutant
-Local: http://localhost:8080/mutantapi/api/v1/mutant
-Cuerpo (Body): Selecciona RAW y usa el formato JSON.
-JSONs de Prueba:
 
 
 ### 🧬 Ejemplos de secuencias JSON para /mutant:
@@ -62,3 +35,6 @@ JSONs de Prueba:
 
 ### 📥 INSTALACIÓN DEL PROYECTO
 Descarga el archivo ZIP, extráelo y configura las propiedades de la base de datos H2 en application.properties. Una vez listo, compila y ejecuta. La API estará activa en http://localhost:8080. Puedes probar el sistema usando herramientas como Postman para explorar los endpoints y analizar los resultados. 🎯
+
+## 🔗 Accede al proyecto aquí: Proyecto Mutantes [Proyecto Mutantes](https://parcialmutantes-h5pz.onrender.com)<br>
+ Con /stats y  /mutant, podrás ver los diferentes apartados disponibles.
